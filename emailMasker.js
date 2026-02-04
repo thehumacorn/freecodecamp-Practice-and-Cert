@@ -2,7 +2,7 @@ let email = "myEmail@email.com";
 function maskEmail(email){
    const emailFirstLetter = email.slice(0,1);
    const emailToBeMasked = email.slice(1 , email.indexOf("@") - 1);
-   const replace = emailToBeMasked.replaceAll(/[a-zA-Z.]/g,"*");
+   const replace = emailToBeMasked.replaceAll(/[a-zA-Z.*[\¬\!\"\£\$\%\^\&\*\(\)\_\+\`\-\=\{\}\:\@\~\<\>\?\[\]\;\'\#\,\.\/\\\|]/g,"*");
    const emailLastLetter = email.slice(email.indexOf("@") - 1, email.indexOf("@"));
    const emailAdd = email.slice(email.indexOf("@"));
    email = emailFirstLetter + replace + emailLastLetter + emailAdd;
