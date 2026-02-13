@@ -49,6 +49,14 @@ function getRandomQuestion(array){
   return array[randomObject];
 }
 
+function getRandomComputerChoice(array){
+  const min = 0;
+  const max = array.length-1
+  const randomAnswer = Math.round(Math.random() * (max - min) + min);
+  const randomSelectedAnswer = array[randomAnswer]
+  return randomSelectedAnswer
+}
+
 const selectedObject = getRandomQuestion(questions)
 
 const selectedChoices = selectedObject.choices
@@ -57,24 +65,12 @@ const answer = selectedObject.answer
 
 const computerSelectedAnswer = getRandomComputerChoice(selectedChoices)
 
-function getRandomComputerChoice(array){
-  const min = 0;
-  const max = array.length-1
-  const randomAnswer = Math.round(Math.random() * (max - min) + min);
-  const randomSelectedAnswer = array[randomAnswer]
-  return randomSelectedAnswer
-}
-console.log(answer)
-console.log(computerSelectedAnswer)
-
 getResults(answer, computerSelectedAnswer)
 
-
 function getResults(selectedObject, computerSelectedAnswer){
-
   if(computerSelectedAnswer === selectedObject){
     return console.log("The computer's choice is correct!");
-  }else if(computerSelectedAnswer != selectedObject){
+  }else if(computerSelectedAnswer !== selectedObject){
     return console.log(`The computer's choice is wrong. The correct answer is: ${answer}`)
   }
 }
