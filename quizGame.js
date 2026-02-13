@@ -57,20 +57,26 @@ function getRandomComputerChoice(array){
   return randomSelectedAnswer
 }
 
-const selectedObject = getRandomQuestion(questions)
+//Computing Random Question from array and saving in variable
+const questionObject = getRandomQuestion(questions)
 
-const selectedChoices = selectedObject.choices
+//Computing the computers choice from quesitonObject choice array and saving in variable
+const computerAnswer = getRandomComputerChoice(questionObject.choices)
+  
+getResults(questionObject, computerAnswer)
 
-const answer = selectedObject.answer
+function getResults(questionObject, computerAnswer){
 
-const computerSelectedAnswer = getRandomComputerChoice(selectedChoices)
+  const answer = questionObject.answer
 
-getResults(answer, computerSelectedAnswer)
+  //results to check in if statements
+  console.log("Computer answer: " + computerAnswer)
+  console.log("questionObject answer: " + answer)
 
-function getResults(selectedObject, computerSelectedAnswer){
-  if(computerSelectedAnswer === selectedObject){
+  if(computerAnswer === answer){
     return console.log("The computer's choice is correct!");
-  }else if(computerSelectedAnswer !== selectedObject){
+  }else if(computerAnswer !== answer){
     return console.log(`The computer's choice is wrong. The correct answer is: ${answer}`)
   }
 }
+
