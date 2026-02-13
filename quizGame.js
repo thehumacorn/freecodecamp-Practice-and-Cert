@@ -1,7 +1,7 @@
 const questions = 
 [
 
-  //object1
+  //object0
   {
     category: "Food",
     question: "What is my favorite type of food?",
@@ -9,7 +9,7 @@ const questions =
     answer: "Indian"
   },
 
-  //object2
+  //object1
   {
     category: "Pets",
     question: "What is my type of Pet?",
@@ -17,7 +17,7 @@ const questions =
     answer: "Cat"
   },
 
-  //object3
+  //object2
   {
     category: "Weather",
     question: "What is my favorite type of Weather?",
@@ -25,7 +25,7 @@ const questions =
     answer: "Rain"
   },
 
-  //object4
+  //object3
   {
     category: "Colors",
     question: "What is my favority color?",
@@ -33,7 +33,7 @@ const questions =
     answer: "White"
   },
 
-  //object5
+  //object4
   {
     category: "Music Instruments",
     question: "What is my favorite Instrument?",
