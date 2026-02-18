@@ -17,11 +17,6 @@ const recordCollection = {
     albumTitle: 'ABBA Gold'
   }
 };
-updateRecords(recordCollection, 5439, "artist", "ABBA")
-updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")
-
-
-
 
 console.log(recordCollection)
 
@@ -38,9 +33,9 @@ function updateRecords(records,id,prop,value){
   }else if(prop === "tracks" && records[id][prop] === undefined){
     records[id][prop] = [value]
 
-  }if(prop === "tracks" && value !== ""){
+  }else if(prop === "tracks" && value !== ""){
     
-    records[id][prop] = value
+    records[id][prop].push(value)
 
   }
 
