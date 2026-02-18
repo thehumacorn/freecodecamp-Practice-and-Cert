@@ -17,29 +17,33 @@ const recordCollection = {
     albumTitle: 'ABBA Gold'
   }
 };
-
-//console.log(recordCollection[2548].tracks.length-1)
-
-//updateRecords(recordCollection, 5439, "artist", "ABBA")
-
+updateRecords(recordCollection, 5439, "artist", "ABBA")
 updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me")
 
+
+
+
+console.log(recordCollection)
+
 function updateRecords(records,id,prop,value){
-  
-  const tracks = records[id].tracks
-  console.log(tracks)
 
- if(records[id].prop[value] === ""){
-   delete records[id].prop[value]
-   return records
+  if(value === ""){
 
- }else if(prop !== tracks){
+    delete records[id][prop]
 
-   records[id].prop[value].push()
+  }else if(prop != "tracks"){
 
-   return records
+    records[id][prop] = value
 
- }else if(prop  == tracks && tracks !== ){
+  }else if(prop === "tracks" && records[id][prop] === undefined){
+    records[id][prop] = [value]
 
- }return records
+  }if(prop === "tracks" && value !== ""){
+    
+    records[id][prop] = value
+
+  }
+
+  return records
+
 }
